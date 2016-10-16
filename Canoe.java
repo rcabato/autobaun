@@ -1,6 +1,6 @@
 class Canoe extends AutoOut{
   public Canoe() {
-    setOutput("YeeHawwww");
+    setOutput("send help please");
   }
 }
 

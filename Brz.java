@@ -1,6 +1,6 @@
 class Brz extends AutoOut{
   public Brz() {
-    setOutput("Quack");
+    setOutput("Totally not frs");
   }
 }
 

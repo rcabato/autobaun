@@ -1,9 +1,9 @@
 class Gtr extends AutoOut implements AttrWheel {  
   public void hazWheel(){
-    System.out.println("Kitty tail wag");
+    System.out.println("Scuurrrrrrr");
   }
   public Gtr() {
-    setOutput("Meow"); 
+    setOutput("Skyline"); 
   }
 }
 

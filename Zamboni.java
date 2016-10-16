@@ -1,6 +1,6 @@
 class Zamboni extends AutoOut{
   public Zamboni() {
-    setOutput("Oink");
+    setOutput("hah zamboni");
   }
 }
 

@@ -1,9 +1,9 @@
 class Frs extends AutoOut implements AttrWheel{
   public void hazWheel(){
-    System.out.println("wags doggy tail");
+    System.out.println("Scurrrrrr");
   }
   public Frs() {
-    setOutput("Woof Woof");
+    setOutput("I just look fast");
   }
 }
 

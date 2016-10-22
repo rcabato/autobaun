@@ -1,0 +1,14 @@
+--array of lanes,
+
+a lane has an auto, distance travelled
+
+
+--track need to have distance to finish line
+
+
+--for loop in main, should continue until theres a winner
+
+--auto will need to have get distance moved
+  - interacts with lane
+
+

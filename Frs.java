@@ -1,4 +1,4 @@
-class Frs extends AutoOut implements AttrWheel{
+class Frs extends Auto implements AttrWheel{
   public void hazWheel(){
     System.out.println("Scurrrrrr");
   }

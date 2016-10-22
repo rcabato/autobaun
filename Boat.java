@@ -1,4 +1,4 @@
-class Boat extends AutoOut{
+class Boat extends Auto{
   public Boat() {
     setOutput("Foghorn");
   }

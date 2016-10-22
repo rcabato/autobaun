@@ -1,4 +1,4 @@
-class Gtr extends AutoOut implements AttrWheel {  
+class Gtr extends Auto implements AttrWheel {  
   public void hazWheel(){
     System.out.println("Scuurrrrrrr");
   }

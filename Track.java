@@ -41,7 +41,7 @@ class Track {
   public static void main (String[] args){
   Track afinstance = new Track();
     for (int i = 0 ; i < 14 ; i++){
-      System.out.println("Old MacDonald had a farm: A " + afinstance.getName() + " says: " + afinstance.getOutput() + ". talkativeness = " + afinstance.getCount());
+      System.out.println("And they're off! " + afinstance.getName() + " " + afinstance.getOutput() + " lap number: " + afinstance.getCount());
       afinstance.hazWheel();
       afinstance.switchAuto();
     }

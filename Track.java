@@ -1,50 +1,54 @@
 class Track {
-  Auto[] autos;
-  
+  Lane[] lanes = new Lane[10];
   int state = 0;
+  float rlength = 500.0f;
+  boolean raceOver = false;
 
-  private Track(){
-    autos = new Auto[] {
-      new Gtr(),
-      new Frs(),
-      new Brz(),
-      new Boat(),
-      new Canoe(),
-      new Tractor(),
-      new Zamboni()
-    };
-  }
-
-  public String getOutput(){
-    return autos[state].getOutput();
-  }
-
-  public int getCount(){
-    return autos[state].getCount();
-  }
-
-  public void switchAuto(){
-    state = (state + 1) % autos.length;
-  }
-
-  public void hazWheel(){
-    if(autos[state] instanceof AttrWheel){
-      AttrWheel drift = (AttrWheel) autos[state];
-      drift.hazWheel();
+  private Track(){    
+    for(int i = 0; i < lanes.length; i++){
+      lanes[i] = new Lane(rlength);
     }
   }
-
-  public String getName(){ 
-    return autos[state].getClass().getName();
+  
+  public void addAutoToTrack(Auto auto, int lanenumber){
+    lanes[lanenumber].setVehicle(auto);
+  }
+   
+  public void doRace(){
+    System.out.println("AND THEY'RE OFF ");
+    while(! raceOver){
+      System.out.println("next hour");
+      for (int i = 0 ; i < lanes.length ; i++){
+        Lane currlane = lanes[i];
+        currlane.doMove();
+	if(currlane.isFinished()){
+	  raceOver = true;
+	}
+        Auto currvehicle = currlane.getVehicle();
+	if(currvehicle != null){
+          System.out.println( currvehicle.getName() + " is in lane " + i + "going: " + currvehicle.getCurrSpeed() +" mph and has gone a total of " + currlane.getPosition() + " miles");
+        }
+      }
+    }
   }
 
   public static void main (String[] args){
-  Track afinstance = new Track();
-    for (int i = 0 ; i < 14 ; i++){
-      System.out.println("Old MacDonald had a farm: A " + afinstance.getName() + " says: " + afinstance.getOutput() + ". talkativeness = " + afinstance.getCount());
-      afinstance.hazWheel();
-      afinstance.switchAuto();
-    }
-  }  
+    Gtr gtr = new Gtr();
+    Brz brz = new Brz();
+    Frs frs = new Frs();
+    Boat boat = new Boat();
+    Canoe canoe = new Canoe();
+    Tractor tractor = new Tractor();
+    Zamboni zamboni = new Zamboni();
+    Track tinstance = new Track();
+    tinstance.addAutoToTrack(gtr, 0);
+    tinstance.addAutoToTrack(brz, 1);
+    tinstance.addAutoToTrack(frs, 2);
+    tinstance.addAutoToTrack(boat, 3);
+    tinstance.addAutoToTrack(canoe, 4);
+    tinstance.addAutoToTrack(tractor, 5);
+    tinstance.addAutoToTrack(zamboni, 6);
+    tinstance.doRace();
+  } 
 }
 

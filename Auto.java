@@ -1,15 +1,32 @@
-class Auto{
-  public int count = 0;
-  private String output = "I ain't sayin shit";
+import java.util.Random;
 
-  public String getOutput(){
-    count = count + 1;
-    return output;
+class Auto{
+  private int speed = 0;
+  private String name = "NAME ME BRO";
+  private float currSpeed = 0.0f;
+  private Random rnd = new Random();
+
+  public int getSpeed(){
+    return speed;
   }
-  public void setOutput(String freshoutput){
-    output = freshoutput;
+  public String getName(){
+    return name;
   }
-  public int getCount(){
-    return count;
+
+  public float getCurrSpeed(){
+    return currSpeed;
   }
+
+  public void setName(String name){
+    this.name = name;
+  }
+
+  public void setSpeed(int speed){
+    this.speed = speed;
+  }
+
+  public void newSpeed(){
+    this.currSpeed = rnd.nextInt(this.speed);
+  }
+
 }

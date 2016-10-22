@@ -1,9 +1,7 @@
-class Frs extends AutoOut implements AttrWheel{
-  public void hazWheel(){
-    System.out.println("Scurrrrrr");
-  }
+class Frs extends Auto {
   public Frs() {
-    setOutput("I just look fast");
+    setName("Frs");
+    setSpeed(60);
   }
 }
 

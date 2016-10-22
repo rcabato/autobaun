@@ -1,6 +1,7 @@
-class Brz extends AutoOut{
+class Brz extends Auto{
   public Brz() {
-    setOutput("Totally not frs");
+    setName("brz");
+    setSpeed(75);
   }
 }
 

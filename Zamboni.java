@@ -1,6 +1,7 @@
-class Zamboni extends AutoOut{
+class Zamboni extends Auto{
   public Zamboni() {
-    setOutput("hah zamboni");
+    setName("Zamboni");
+    setSpeed(5);
   }
 }
 

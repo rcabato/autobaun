@@ -1,6 +1,8 @@
+package com.remcreate.autobahn.vehicle;
+
 import java.util.Random;
 
-class Auto{
+public class Auto{
   private int speed = 0;
   private String name = "NAME ME BRO";
   protected float currSpeed = 0.0f;

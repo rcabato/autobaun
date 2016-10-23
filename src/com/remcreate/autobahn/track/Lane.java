@@ -1,3 +1,7 @@
+package com.remcreate.autobahn.track;
+
+import com.remcreate.autobahn.vehicle.Auto;
+
 class Lane { 
   float length;
   float position = 0.0f;

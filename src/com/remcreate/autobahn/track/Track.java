@@ -1,3 +1,7 @@
+package com.remcreate.autobahn.track;
+
+import com.remcreate.autobahn.vehicle.*;
+
 class Track {
   Lane[] lanes = new Lane[10];
   int state = 0;
@@ -15,9 +19,10 @@ class Track {
   }
    
   public void doRace(){
+    int hour = 0;
     System.out.println("AND THEY'RE OFF ");
     while(! raceOver){
-      System.out.println("next hour");
+      System.out.println("hour: " + hour);
       for (int i = 0 ; i < lanes.length ; i++){
         Lane currlane = lanes[i];
         currlane.doMove();
@@ -26,9 +31,10 @@ class Track {
 	}
         Auto currvehicle = currlane.getVehicle();
 	if(currvehicle != null){
-          System.out.println( currvehicle.getName() + " is in lane " + i + "going: " + currvehicle.getCurrSpeed() +" mph and has gone a total of " + currlane.getPosition() + " miles");
+          System.out.println( currvehicle.getName() + " is in lane " + i + " at the speed: " + currvehicle.getCurrSpeed() +" mph and has gone a total of " + currlane.getPosition() + " miles");
         }
       }
+      hour++;
     }
   }
 
@@ -36,16 +42,16 @@ class Track {
     Gtr gtr = new Gtr();
     Brz brz = new Brz();
     Frs frs = new Frs();
-    Boat boat = new Boat();
-    Canoe canoe = new Canoe();
+//    Boat boat = new Boat();
+//    Canoe canoe = new Canoe();
     Tractor tractor = new Tractor();
     Zamboni zamboni = new Zamboni();
     Track tinstance = new Track();
     tinstance.addAutoToTrack(gtr, 0);
     tinstance.addAutoToTrack(brz, 1);
     tinstance.addAutoToTrack(frs, 2);
-    tinstance.addAutoToTrack(boat, 3);
-    tinstance.addAutoToTrack(canoe, 4);
+//    tinstance.addAutoToTrack(boat, 3);
+//    tinstance.addAutoToTrack(canoe, 4);
     tinstance.addAutoToTrack(tractor, 5);
     tinstance.addAutoToTrack(zamboni, 6);
     tinstance.doRace();

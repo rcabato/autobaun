@@ -2,7 +2,7 @@ package com.remcreate.autobahn.vehicle;
 
 import java.util.Random;
 
-public class Zamboni extends Auto{
+public class Zamboni extends Vehicle{
   Random rand = new Random();
 
   public Zamboni() {

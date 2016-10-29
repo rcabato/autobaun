@@ -1,12 +1,12 @@
 package com.remcreate.autobahn.track;
 
-import com.remcreate.autobahn.vehicle.Auto;
+import com.remcreate.autobahn.vehicle.Vehicle;
 
-class Lane { 
+abstract class Lane { 
   float length;
   float position = 0.0f;
-  Auto vehicle;
-
+  Vehicle vehicle;
+  String laneName;
   public Lane(float length){
     this.length = length;
   }
@@ -18,22 +18,27 @@ class Lane {
   public float getPosition(){
     return position;
   }
-
-  public void setPosition(float position){
+  
+  private void setPosition(float position){
     this.position = position;
   }
   
-  public Auto getVehicle(){
+  public Vehicle getVehicle(){
     return vehicle;
   }
 
-  public void setVehicle(Auto auto){
-    this.vehicle = auto;
+  public String getLaneName(){
+    return laneName;
   }
+  public void setVehicle(Vehicle vehicle){
+    this.vehicle = vehicle;
+  }
+
+  abstract public void newSpeed();
 
   public void doMove(){
     if(vehicle != null){
-      vehicle.newSpeed();
+      newSpeed();
       setPosition(position + vehicle.getCurrSpeed());
     }
   }
@@ -41,6 +46,4 @@ class Lane {
   public boolean isFinished(){
     return position >= length;
   }
-
-
 }  
